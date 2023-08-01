@@ -1,27 +1,34 @@
 import java.util.*;
 class Solution {
     public String solution(String[] cards1, String[] cards2, String[] goal) {
-        //cards1 과 cards2 arrayList에 저장하기
+        //cards1, cards2를 어레이리스트에 저장
         ArrayList<String> list1 = new ArrayList<>();
         ArrayList<String> list2 = new ArrayList<>();
         
-        for (String s : cards1) {
-            list1.add(s);
+        for (String str : cards1) {
+            list1.add(str);
         }
-        for (String s : cards2) {
-            list2.add(s);
+        for (String str : cards2) {
+            list2.add(str);
         }
-        // goal 기준으로 비교해서 불가능하면 No, arrayList가 비면 Yes
-        String answer = "";
-        for (String s : goal) {
-            if (!list1.isEmpty() && list1.get(0).equals(s)) {
-                list1.remove(0);
-            } else if (!list2.isEmpty() && list2.get(0).equals(s)) {
-                list2.remove(0);
+        
+        //goal과 비교
+        int index1 = 0;
+        int index2 = 0;
+        String answer = "Yes";
+        
+        for (int i = 0; i < goal.length; i++) {
+            if (index1 < cards1.length && goal[i].equals(cards1[index1])) {
+                index1++;
+            } else if (index2 < cards2.length && goal[i].equals(cards2[index2])) {
+                index2++;
             } else {
-                return "No";
+                answer = "No";
+                break;
             }
+            
         }
-        return "Yes";
+        
+        return answer;
     }
 }
