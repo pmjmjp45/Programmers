@@ -17,36 +17,43 @@ class Solution {
         
         //번호 누르기
         String answer = "";
+        StringBuilder builder = new StringBuilder();
         for (int i = 0; i < numbers.length; i++) {
             if (keypad[numbers[i]][0] == 0) {
-                answer += "L";
+                // answer += "L";
+                builder.append("L");
                 leftNow = keypad[numbers[i]];
             } else if (keypad[numbers[i]][0] == 2) {
-                answer += "R";
+                // answer += "R";
+                builder.append("R");
                 rightNow = keypad[numbers[i]];
             } else {
                 //오른쪽이 가까운 경우
                 if (getDistance(leftNow, numbers[i]) > getDistance(rightNow, numbers[i])) {
-                    answer += "R";
+                    // answer += "R";
+                    builder.append("R");
                     rightNow = keypad[numbers[i]];
                 //왼쪽이 가까운 경우
                 } else if (getDistance(leftNow, numbers[i]) < getDistance(rightNow, numbers[i])) {
-                    answer += "L";
+                    // answer += "L";
+                    builder.append("L");
                     leftNow = keypad[numbers[i]];
                 //거리 같은 경우
                 } else {
                     if (hand.equals("right")) {
-                        answer += "R";
+                        // answer += "R";
+                        builder.append("R");
                         rightNow = keypad[numbers[i]];
                     } else {
-                        answer += "L";
+                        // answer += "L";
+                        builder.append("L");
                         leftNow = keypad[numbers[i]];
                     }
                 }
             }
         }
        
-        return answer;
+        return builder.toString();
     }
     
     public static int getDistance(int[] hand, int goal) {
