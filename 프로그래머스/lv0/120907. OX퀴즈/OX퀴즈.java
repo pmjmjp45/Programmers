@@ -6,13 +6,9 @@ class Solution {
             String[] line = quiz[i].split(" ");
             
             //연산
-            
             int x = Integer.parseInt(line[0]);
             int y = Integer.parseInt(line[2]);
             int z = Integer.parseInt(line[4]);
-            // int x = getNum(line[0]);
-            // int y = getNum(line[2]);
-            // int z = getNum(line[4]);
             String math = line[1];
             int ans = 0;
 
@@ -27,16 +23,7 @@ class Solution {
             } else {
                 answer[i] = "X";
             }
-            
         }
         return answer;
-    }
-    
-    public static int getNum(String str) {
-        int ret = 0;
-        if (str.startsWith("-")) {
-            ret = -1 * Integer.parseInt(str.substring(1));
-        }
-        return ret;
     }
 }
