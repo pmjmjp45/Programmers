@@ -10,7 +10,7 @@ class Solution {
         int left = 0; // 가장 가벼운 사람의 인덱스
         int answer = 0;
         
-        while(left + 1 < right) {
+        while(left <= right) {
             if (people[left] + people[right] <= limit) {
                 answer++;
                 left++;
@@ -19,13 +19,6 @@ class Solution {
                 answer++;
                 right--;
             }
-        }
-        
-        //인접했을 때는 따로 빼서 해줘야 함
-        if (people[left] + people[right] <= limit) {
-            answer++;
-        } else {
-            answer += 2;
         }
         return answer;
     }
