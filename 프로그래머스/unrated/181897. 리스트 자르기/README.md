@@ -1,10 +1,10 @@
 # [level unrated] 리스트 자르기 - 181897 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181897#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181897?language=javascript) 
 
 ### 성능 요약
 
-메모리: 33.6 MB, 시간: 2.44 ms
+메모리: 33.5 MB, 시간: 0.07 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 10월 2일 13:29:0
+2023년 10월 2일 13:33:31
 
 ### 문제 설명
 
